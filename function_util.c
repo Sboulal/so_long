@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:12 by saboulal          #+#    #+#             */
-/*   Updated: 2023/02/25 18:02:29 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:36:26 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,23 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	int	i;
-	int	j;
+// char	*ft_strstr(char *str, char *to_find)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	j = 0;
-	if (!to_find[j])
-		return (str);
-	while (str[i] != '\0')
-	{
-		while (to_find[j] == str[i + j] && str[i + j])
-			j++;
-		if (!to_find[j])
-			return (str + i);
-		j = 0;
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	j = 0;
+// 	if (!to_find[j])
+// 		return (str);
+// 	while (str[i] != '\0')
+// 	{
+// 		while (to_find[j] == str[i + j] && str[i + j])
+// 			j++;
+// 		if (!to_find[j])
+// 			return (str + i);
+// 		j = 0;
+// 		i++;
+// 	}
+// 	return (0);
+// }
