@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/01 17:50:26 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:30:52 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,18 +95,3 @@ int find_ZERO(char *map)
     return (0);
 }
 
-// int find_new_line(char **map)
-// {
-//     int i;
-//     i = 0;
-//     while (map[i])
-//     {
-//         if(map[i] == '\n' || map[i] == '\0')
-//         {
-//             write(1,"Error",5);
-//             return 0;
-//         }
-//         i++;
-//     }
-//     return (1);
-// }

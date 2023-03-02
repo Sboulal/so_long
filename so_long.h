@@ -6,21 +6,22 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/01 18:01:31 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:28:10 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG
 #define SO_LONG
+/*For getnextline*/
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42
 #endif
+/*end get*/
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
-
 typedef struct mlx_lib
 {
     void *mlx;
@@ -32,7 +33,7 @@ typedef struct mlx_lib
     void *player;
     void *bg;
     void *exit;
-
+    void *img;
     int w_img;
     int h_img;
      int w_map;
@@ -61,7 +62,8 @@ int find_ZERO(char *map);
 // void Other_char(char *map);
 int ft_search(const char *str, int search);
 
-void ft_check_map(char **map);
-
-int ft_rectangular_map(t_data *map);
+// void ft_check_map(char **map);
+// void check_is_rec(char **map);
+void ft_rectangular_map(char **map);
+void ft_wind();
 #endif
