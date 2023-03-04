@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/02 17:28:10 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:43:16 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,14 @@ char *ft_strstr(char *str, char *to_find);
 char	**ft_split(char  *s, char c);
 /*Function Parsing*/
 int check_ext(char *str, char *search);
-// char *map_check_is_valid(char *file_name);
-
 int check_content_map(char *str);
 char *map_check_is_valid(char *file_name);
-int find_EXIT(char *map);
-int find_COLLECTIBLES(char *map);
-int find_PLAYER(char *map);
-int find_ZERO(char *map);
-// int find_new_line(char *map);
-// void Other_char(char *map);
-int ft_search(const char *str, int search);
+int find_EXIT(char **map);
+int find_COLLECTIBLES(char **map);
+int find_PLAYER(char **map);
+int find_ZERO(char **map);
+// int check_all(char **map);
 
-// void ft_check_map(char **map);
-// void check_is_rec(char **map);
-void ft_rectangular_map(char **map);
+int ft_rectangular_map(char **map);
 void ft_wind();
 #endif

@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/02 13:30:52 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:44:45 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char *map_check_is_valid(char *file_name)
 {
     int fd;
     static char *str;
+   
     char *line;
     
     fd = open(file_name, O_RDONLY);
@@ -42,56 +43,71 @@ char *map_check_is_valid(char *file_name)
         line = get_next_line(fd);
         free(line);
     }
-    // str = ft_split(line,'\n');
     return (str);
 }
 
 /*check  components*/
-int find_PLAYER(char *map)
+int find_PLAYER(char **map)
+{
+    int i;
+    int j;
+
+    i =0;
+    j =0;
+    while (map[i])
+    {  
+        while(map[j])
+        {
+             if (map[i][j] == (char*)'P')
+            return (1);
+          j++;
+        }
+      i++;
+    }
+    return (0);
+}
+
+int find_EXIT(char **map)
 {
     int i = 0;
     while (map[i])
     {
-        if (map[i] == 'P')
+        if (map[i] == (char*)'E')
             return (1);
         i++;
     }
     return (0);
 }
 
-int find_EXIT(char *map)
+int find_COLLECTIBLES(char **map)
 {
-    int i = 0;
+    int i;
+    int j;
+
+    i = 0;
+    j = 0;
     while (map[i])
     {
-        if (map[i] == 'E')
+        while(map[j])
+        {
+            if (map[i][j] == (char*)'C')
             return (1);
+          j++;
+        }
+        
         i++;
     }
     return (0);
 }
 
-int find_COLLECTIBLES(char *map)
+int find_ZERO(char **map)
 {
     int i = 0;
     while (map[i])
     {
-        if (map[i] == 'C')
+        if (map[i] == (char*)'0')
             return (1);
         i++;
     }
     return (0);
 }
-
-int find_ZERO(char *map)
-{
-    int i = 0;
-    while (map[i])
-    {
-        if (map[i] == '0')
-            return (1);
-        i++;
-    }
-    return (0);
-}
-

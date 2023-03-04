@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:00:53 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/02 16:49:23 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:31:22 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,43 +27,18 @@ int main(int argc,char **argv)
 {
     char *str;
     char **map;
-    int i;
-    i =0;
+   int i;
+    i = 0;
     if (argc != 2)
         return(write(1,"Invalid argument",16),0);
     if(check_ext(argv[1],".ber") || ft_strlen(argv[1]) < 5)
             return(write(1,"Is Not Valid Extension ",23),1);
     str = map_check_is_valid(argv[1]);
-   
     map = ft_split(str,'\n');
+   if(ft_rectangular_map(map))
+        write(1,"NOT RECT\n",9);
+   /*checking is  contain CEP ????*/
    
-    // if( ft_rectangular_map(map))
-    //      write(1,"GOOD",4);
-    // if(find_PLAYER(str) &&find_EXIT(str)&&find_COLLECTIBLES(str)&&find_ZERO(str))
-    //     write(1,"Map  valid \n",13);
-    // else
-    //     write(1,"Map not  valid \n",17);
-    //  while(map[i]!= NULL)
-    //  {
-    //      printf("%s",map[i]);
-    //      i++;
-    //  }
-    ft_wind();
-    // ft_rectangular_map(map);
-    
-    /**khalid*/
-    // t_data data;
    
-    // data.map = map_check_is_valid(argv[1]);
-    // init_h_w_map(&data);
-    // printf("%s\n", data.map);
-    // printf("h =%d\n", data.h_map);
-    // printf("w = %d\n", data.w_map);
-    
-    // printf("\nw = %d\n",data->w_img);
-    // printf("h = %d\n",data->h_img);
-    /****/
- /*For rectangular and New line */
- 
     return (0);
 } 
