@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/04 15:43:16 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/09 11:40:32 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct mlx_lib
     int h_img;
      int w_map;
     int h_map;
+    int jo; // player ....one
 } t_data;
 
 /*Function For Help*/
@@ -46,18 +47,20 @@ int ft_strncmp(const char *f, const char *s, int len);
 char *ft_strjoin(char *left_str, char *buff);
 char *get_next_line(int fd);
 int ft_strchr(char *str);
+int ft_strchr_1(char *str,int c);
 char *ft_strstr(char *str, char *to_find);
 char	**ft_split(char  *s, char c);
+char	*ft_search(const char *str, int search);
 /*Function Parsing*/
 int check_ext(char *str, char *search);
 int check_content_map(char *str);
 char *map_check_is_valid(char *file_name);
-int find_EXIT(char **map);
-int find_COLLECTIBLES(char **map);
-int find_PLAYER(char **map);
-int find_ZERO(char **map);
-// int check_all(char **map);
+int Find_EXIT(char **map);
+int Find_COLLECTIBLES(char **map);
+int Find_PLAYER(char **map);
 
-int ft_rectangular_map(char **map);
-void ft_wind();
+// int check_all(char **map);
+void Check_CE(char **map);
+void ft_rectangular_map(char **map);
+// void ft_wind();
 #endif

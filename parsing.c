@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/04 17:44:45 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/09 11:22:20 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,39 +47,43 @@ char *map_check_is_valid(char *file_name)
 }
 
 /*check  components*/
-int find_PLAYER(char **map)
+int Find_PLAYER(char **map)
 {
     int i;
     int j;
-
-    i =0;
-    j =0;
+    int x;
+    i = 0;
+    j = 0;
+    x = 0;
     while (map[i])
     {  
-        while(map[j])
+        while(map[i][j])
         {
-             if (map[i][j] == (char*)'P')
-            return (1);
+            j = 0;
+             if (map[i][j] == 'P')
+                 x++;
           j++;
         }
       i++;
     }
+    if(x == 1)
+        return(1);
     return (0);
 }
 
-int find_EXIT(char **map)
+int Find_EXIT(char **map)
 {
     int i = 0;
     while (map[i])
     {
-        if (map[i] == (char*)'E')
+        if (ft_strchr_1(map[i],'E') == 1)
             return (1);
         i++;
     }
     return (0);
 }
 
-int find_COLLECTIBLES(char **map)
+int Find_COLLECTIBLES(char **map)
 {
     int i;
     int j;
@@ -88,26 +92,51 @@ int find_COLLECTIBLES(char **map)
     j = 0;
     while (map[i])
     {
-        while(map[j])
-        {
-            if (map[i][j] == (char*)'C')
-            return (1);
-          j++;
-        }
-        
+       if(ft_strchr_1(map[i],'C') == 1)
+            return(1);
         i++;
     }
     return (0);
 }
-
-int find_ZERO(char **map)
+ 
+void Check_CE(char **map)
 {
-    int i = 0;
-    while (map[i])
+    int a;
+
+    a = 0;
+    if(Find_COLLECTIBLES(map) != 0)
     {
-        if (map[i] == (char*)'0')
-            return (1);
+        printf("salma");
+         write(1,"NOT VALID TRY C!!!!!",19);
+         exit(a);
+    }
+    if(Find_EXIT(map) != 0)
+    {
+         write(1,"NOT VALID TRY E!!!!!",19);
+          exit(a);
+    }
+    if(Find_PLAYER(map) != 0)
+    {
+        write(1,"NOT VALID TRY P!!!!!",19);
+         exit(a);
+    }
+} 
+
+void ft_check_walls(char **map)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 0;
+    while(map[i])
+    {
+        while(map[i][j])
+        {
+          if (map[i][j] != '1')
+                write(1,"ERROR NOT FOUND",15);
+           j++;   
+        }
         i++;
     }
-    return (0);
 }

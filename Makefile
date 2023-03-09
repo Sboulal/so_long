@@ -16,7 +16,7 @@ CC = cc
  
 CFLAGS = -Wall -Wextra -Werror
 	
-OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o ft_window.o
+OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o 
  
 RM = rm -f 
  

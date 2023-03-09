@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   other_check_map.c                                  :+:      :+:    :+:   */
+/*   algo_back.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 10:52:31 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/09 11:41:30 by saboulal         ###   ########.fr       */
+/*   Created: 2023/03/08 11:44:27 by saboulal          #+#    #+#             */
+/*   Updated: 2023/03/08 15:32:10 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include"so_long.h"
 
-void  ft_rectangular_map(char  **map)
+/*working in Backtracing .....*/
+
+int ft_back_map(char **map)
 {
     int i;
-    
+
     i = 0;
-    
-    while(map[i]!= NULL)
+    while (map[i])
     {
-         
-        if(ft_strlen(map[i]) != ft_strlen(map[0]))
-        {
-            write(1,"Check is rect",13);
-            exit(0);
-        }
-          i++;  
+        if(map[i] == 1 && map[i +1]== 'P' && map[i +2] == 1)  
+                    write(1,"error",5);
+        i++;
     }
+    return (0);
+}
+
+int ft_copy_map(char **map)
+{
+    
 }

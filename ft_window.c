@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void ft_wind()
+void ft_wind(char **map)
 {
    
   t_data mlx;
