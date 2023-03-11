@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/09 11:40:32 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:39:43 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG
 #define SO_LONG
+// # define W 13
+// # define S 1
+// # define A 0
+// # define D 2
+// # define right 124
+// # define left  123
+// # define  up   126
+// # define  down 125
 /*For getnextline*/
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42
@@ -22,6 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
+
 typedef struct mlx_lib
 {
     void *mlx;
@@ -38,7 +47,7 @@ typedef struct mlx_lib
     int h_img;
      int w_map;
     int h_map;
-    int jo; // player ....one
+
 } t_data;
 
 /*Function For Help*/
@@ -58,9 +67,8 @@ char *map_check_is_valid(char *file_name);
 int Find_EXIT(char **map);
 int Find_COLLECTIBLES(char **map);
 int Find_PLAYER(char **map);
-
-// int check_all(char **map);
 void Check_CE(char **map);
 void ft_rectangular_map(char **map);
-// void ft_wind();
+void ft_check_walls(char **map);
+void ft_wind();
 #endif

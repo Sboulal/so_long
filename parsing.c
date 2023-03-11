@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/09 11:22:20 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:55:39 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,15 @@ char *map_check_is_valid(char *file_name)
 int Find_PLAYER(char **map)
 {
     int i;
-    int j;
-    int x;
+
     i = 0;
-    j = 0;
-    x = 0;
-    while (map[i])
-    {  
-        while(map[i][j])
-        {
-            j = 0;
-             if (map[i][j] == 'P')
-                 x++;
-          j++;
-        }
+    while(map[i])
+    {
+        if(ft_strchr_1(map[i],'P') == 1)
+            return (0);
       i++;
     }
-    if(x == 1)
-        return(1);
-    return (0);
+    return(1);
 }
 
 int Find_EXIT(char **map)
@@ -77,27 +67,25 @@ int Find_EXIT(char **map)
     while (map[i])
     {
         if (ft_strchr_1(map[i],'E') == 1)
-            return (1);
+            return (0);
         i++;
     }
-    return (0);
+    return (1);
 }
 
 int Find_COLLECTIBLES(char **map)
 {
     int i;
-    int j;
-
-    i = 0;
-    j = 0;
-    while (map[i])
+   i = 0;
+   while (map[i])
     {
        if(ft_strchr_1(map[i],'C') == 1)
-            return(1);
+            return(0);
         i++;
     }
-    return (0);
+    return (1);
 }
+ 
  
 void Check_CE(char **map)
 {
@@ -105,15 +93,14 @@ void Check_CE(char **map)
 
     a = 0;
     if(Find_COLLECTIBLES(map) != 0)
-    {
-        printf("salma");
-         write(1,"NOT VALID TRY C!!!!!",19);
+    {   
+        write(1,"NOT VALID TRY C!!!!!",19);
          exit(a);
     }
     if(Find_EXIT(map) != 0)
     {
-         write(1,"NOT VALID TRY E!!!!!",19);
-          exit(a);
+        write(1,"NOT VALID TRY E!!!!!",19);
+        exit(a);
     }
     if(Find_PLAYER(map) != 0)
     {
@@ -131,12 +118,30 @@ void ft_check_walls(char **map)
     j = 0;
     while(map[i])
     {
+        if(map[i][0] != '1')
+                write(1,"ERROR NOT FOUND",15);
+        i++;
+    }
+    while(map[j])
+    {
+          if (map[0][j] != '1')
+                write(1,"ERROR NOT FOUND",15);
+        j++;   
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+void check_carct(char **map)
+{
+    int i;
+    int j;
+    char *str;
+    str ="10ECP";
+    while(map[i])
+    {
         while(map[i][j])
         {
-          if (map[i][j] != '1')
-                write(1,"ERROR NOT FOUND",15);
-           j++;   
-        }
+            if(ft_strchr_1(map[i],str[i]))
+            j++;
+        }   
         i++;
     }
 }

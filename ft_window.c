@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_window.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/04 10:03:34 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:21:56 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ft_wind(char **map)
+void ft_wind()
 {
    
-  t_data mlx;
-  // t_data  win;
-  t_data img;
-  // t_data img_put;
-  char *r ="pexels-madison-inouye-1831234.xpm";
-  int w;
+  t_data m;
+
   int h;
-   mlx.mlx = mlx_init();
-  //  win.win = mlx_new_window(mlx.mlx,500,600,"so_long");
-  //  img.img = mlx_new_image(mlx.mlx,width.w_img,height.h_img);
-  //  mlx_put_image_to_window(mlx.mlx,win.win,img.img,width.w_map,height.h_map);
-  img.img = mlx_xpm_file_to_image(mlx.mlx,r,&w,&h);
-   mlx_loop(mlx.mlx);
-    
+  int w;
+  int x;
+  int y;
+  
+  h = 0;
+  w = 0;
+  x = 10;
+  y = 10;
+ m.mlx= mlx_init();
+ m.win = mlx_new_window(m.mlx,x * 100,y * 50,"so_long");
+ m.img = mlx_xpm_file_to_image(m.mlx,"360_F_507496890_lAb2Pes4JPrMOLuOteCvYe0XfHycUKFG.xpm",&w,&h);
+ mlx_put_image_to_window(m.mlx,m.win,m.img,x ,y);
+ mlx_loop(m.mlx); 
 }
