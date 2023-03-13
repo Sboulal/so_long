@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/10 18:55:39 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:01:26 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,20 @@ char *map_check_is_valid(char *file_name)
 int Find_PLAYER(char **map)
 {
     int i;
-
+    int P;
     i = 0;
+    P = 0;
     while(map[i])
     {
         if(ft_strchr_1(map[i],'P') == 1)
+        {
+            P++;
             return (0);
-      i++;
+        }
+          
+       i++;
     }
-    return(1);
+  return(P == 1);
 }
 
 int Find_EXIT(char **map)
@@ -119,13 +124,18 @@ void ft_check_walls(char **map)
     while(map[i])
     {
         if(map[i][0] != '1')
-                write(1,"ERROR NOT FOUND",15);
+                write(1,"ERROR FOUND",11);
+                break;
         i++;
     }
     while(map[j])
     {
           if (map[0][j] != '1')
-                write(1,"ERROR NOT FOUND",15);
+          {
+             write(1,"ERROR FOUND",11);
+                break;
+          }
+               
         j++;   
     }
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -133,15 +143,22 @@ void check_carct(char **map)
 {
     int i;
     int j;
-    char *str;
+    
+    i = 0;
+   char *str = NULL;
     str ="10ECP";
     while(map[i])
     {
-        while(map[i][j])
+         j = 0;
+        while(map[j])
         {
-            if(ft_strchr_1(map[i],str[i]))
+            if(ft_strchr_1(str,map[i][j]) != 0)
+            {
+                write(1,"TR AG NOT VALID",15);
+                exit(0);
+            }
             j++;
-        }   
+        }
         i++;
     }
 }

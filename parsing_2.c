@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_window.c                                        :+:      :+:    :+:   */
+/*   parsing_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/13 19:02:27 by saboulal         ###   ########.fr       */
+/*   Created: 2023/03/13 09:58:11 by saboulal          #+#    #+#             */
+/*   Updated: 2023/03/13 15:55:41 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-void ft_wind()
+#include"so_long.h"
+int get_collectibles(char **map)
 {
-   t_data m;
+    int i;
+    int C;
 
-  int h;
-  int w;
-  int x;
-  int y;
-  
-  h = 0;
-  w = 0;
-  x = 10;
-  y = 10;
- m.mlx= mlx_init();
- m.win = mlx_new_window(m.mlx,x * 100,y * 50,"so_long");
- m.img = mlx_xpm_file_to_image(m.mlx,"Solid_green.svg.xpm",&w,&h);
- mlx_put_image_to_window(m.mlx,m.win,m.img,x ,y);
-//  mlx_hook(m.win,);
-//  mlx_loop(m.mlx, ); 
+   i = 0;
+   
+  while(map[i])
+   {
+    while (map[i][j])
+    {
+      
+       if(map[i][j] == 'C')
+          C++;
+      j++;
+    }
+    
+     i++;
+   }
+   return(C);
 }

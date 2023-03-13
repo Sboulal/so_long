@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:00:53 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/10 10:27:22 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:57:22 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main(int argc,char **argv)
     Check_CE(map);
     ft_rectangular_map(map);
     ft_check_walls(map);
+    // check_carct(map);
     ft_wind();
    return (0);
 } 

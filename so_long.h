@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/10 17:39:43 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:32:47 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG
 #define SO_LONG
-// # define W 13
-// # define S 1
-// # define A 0
-// # define D 2
-// # define right 124
-// # define left  123
-// # define  up   126
-// # define  down 125
+
 /*For getnextline*/
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42
@@ -30,7 +23,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
-
+// # define W 13
+// # define S 1
+// # define A 0
+// # define D 2
+// # define  right 124
+// # define  left  123
+// # define  up   126
+// # define  down 125
+// # define  esc 53
 typedef struct mlx_lib
 {
     void *mlx;
@@ -70,5 +71,6 @@ int Find_PLAYER(char **map);
 void Check_CE(char **map);
 void ft_rectangular_map(char **map);
 void ft_check_walls(char **map);
+void check_carct(char **map);
 void ft_wind();
 #endif
