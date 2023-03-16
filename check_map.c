@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_2.c                                        :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 09:58:11 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/14 15:42:59 by saboulal         ###   ########.fr       */
+/*   Created: 2023/03/14 13:22:30 by saboulal          #+#    #+#             */
+/*   Updated: 2023/03/14 15:04:36 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+// #include"so_long.c"
 
-int get_collectibles(char **map)
-{
-    int i;
-    int C;
-
-   i = 0;
-   
-  while(map[i])
-   {
-    while (map[i][j])
-    {
-      
-       if(map[i][j] == 'C')
-          C++;
-      j++;
-    }
-    i++;
-   }
-   return(C);
-}
+// void ft_mp_check(char **map)
+// {
+//     Check_CEP(map);
+//     ft_rectangular_map(map);
+//     ft_check_walls(map);
+//     check_carct(map);
+// }

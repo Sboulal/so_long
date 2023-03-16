@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/13 12:32:47 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:35:30 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct mlx_lib
     void *win;
     char **map_split;
     char *map;
-
     void *wall;
     void *player;
     void *bg;
@@ -46,7 +45,7 @@ typedef struct mlx_lib
     void *img;
     int w_img;
     int h_img;
-     int w_map;
+    int w_map;
     int h_map;
 
 } t_data;
@@ -68,9 +67,12 @@ char *map_check_is_valid(char *file_name);
 int Find_EXIT(char **map);
 int Find_COLLECTIBLES(char **map);
 int Find_PLAYER(char **map);
-void Check_CE(char **map);
+void Check_CEP(char **map);
 void ft_rectangular_map(char **map);
 void ft_check_walls(char **map);
 void check_carct(char **map);
+int search_car(char *str);
+// void check_carct(char **map);
+// void ft_mp_check(char **map);
 void ft_wind();
 #endif

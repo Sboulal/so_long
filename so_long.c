@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:00:53 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/13 15:57:22 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:56:56 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void init_h_w_map(t_data *data)
 int main(int argc,char **argv)
 {
     char *str;
-    char **map;
+    char **map; 
   
     if (argc != 2)
         return(write(1,"Invalid argument",16),0);
@@ -34,10 +34,10 @@ int main(int argc,char **argv)
             return(write(1,"Is Not Valid Extension ",23),1);
     str = map_check_is_valid(argv[1]);
     map = ft_split(str,'\n');
-    Check_CE(map);
+    Check_CEP(map);
     ft_rectangular_map(map);
     ft_check_walls(map);
-    // check_carct(map);
+    check_carct(map);
     ft_wind();
    return (0);
 } 

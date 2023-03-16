@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 10:52:31 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/09 11:41:30 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:53:52 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void  ft_rectangular_map(char  **map)
             write(1,"Check is rect",13);
             exit(0);
         }
-          i++;  
+          i++;
     }
 }

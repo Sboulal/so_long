@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_2.c                                        :+:      :+:    :+:   */
+/*   intialisation_for_game.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 09:58:11 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/14 15:42:59 by saboulal         ###   ########.fr       */
+/*   Created: 2023/03/14 15:42:11 by saboulal          #+#    #+#             */
+/*   Updated: 2023/03/14 15:42:45 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"so_long.h"
 
-int get_collectibles(char **map)
+int x_for_s(char **str)
 {
-    int i;
-    int C;
-
+   int i;
    i = 0;
-   
-  while(map[i])
+   while (str[i])
    {
-    while (map[i][j])
-    {
       
-       if(map[i][j] == 'C')
-          C++;
-      j++;
-    }
-    i++;
+      i++;
    }
-   return(C);
+   return(i);
+}
+
+int y_for_s(char **str)
+{
+   int i;
+   i = 0;
+   while (str[i])
+      i++;
+   
+   return(i);
 }

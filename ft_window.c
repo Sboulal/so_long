@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/13 19:02:27 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/14 09:47:29 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void ft_wind()
  m.img = mlx_xpm_file_to_image(m.mlx,"Solid_green.svg.xpm",&w,&h);
  mlx_put_image_to_window(m.mlx,m.win,m.img,x ,y);
 //  mlx_hook(m.win,);
-//  mlx_loop(m.mlx, ); 
+ mlx_loop(m.mlx); 
 }

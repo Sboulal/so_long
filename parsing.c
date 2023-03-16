@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/13 16:01:26 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:00:50 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int Find_COLLECTIBLES(char **map)
 }
  
  
-void Check_CE(char **map)
+void Check_CEP(char **map)
 {
     int a;
 
@@ -138,27 +138,38 @@ void ft_check_walls(char **map)
                
         j++;   
     }
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+}
+int search_car(char *str)
+{
+    int i;
+    char c;
+  
+     str = "10ECP";
+     c = '\0';
+     i = 0;
+    while(str[i])
+    {
+        if(c == str[i])
+             return (1);
+        i++;
+    }
+    return (0);
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 void check_carct(char **map)
 {
     int i;
     int j;
     
     i = 0;
-   char *str = NULL;
-    str ="10ECP";
-    while(map[i])
+    j = 0;
+    while (map[i])
     {
-         j = 0;
-        while(map[j])
+        while( map[i][j] != '\0')
         {
-            if(ft_strchr_1(str,map[i][j]) != 0)
-            {
-                write(1,"TR AG NOT VALID",15);
-                exit(0);
-            }
+             if(search_car(map[i]) != 0)
+                write(1,"INVALID",7);
             j++;
         }
-        i++;
+       i++;
     }
 }

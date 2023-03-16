@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+         #
+#    By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 15:06:46 by saboulal          #+#    #+#              #
-#    Updated: 2023/03/10 13:24:20 by saboulal         ###   ########.fr        #
+#    Updated: 2023/03/14 13:27:47 by saboulal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
  
 CFLAGS = -Wall -Wextra -Werror
 	
-OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o ft_window.o
+OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o ft_window.o check_map.o
  
 RM = rm -f 
  
