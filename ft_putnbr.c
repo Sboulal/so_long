@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_window.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/20 12:50:26 by saboulal         ###   ########.fr       */
+/*   Created: 2023/03/17 13:12:49 by saboulal          #+#    #+#             */
+/*   Updated: 2023/03/17 14:29:21 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include"so_long.h"
 
-void ft_wind()
+void	ft_putnbr_fd(int nb)
 {
-   t_data *m = NULL;
+	long int	n;
 
-  int h;
-  int w;
-  int x;
-  int y;
-  
-  h = 0;
-  w = 0;
-  x = 10;
-  y = 10;
- m->mlx= mlx_init();
- m->win = mlx_new_window(m->mlx,x * 100,y * 50,"so_long");
- m->img = mlx_xpm_file_to_image(m->mlx,"Solid_green.svg.xpm",&w,&h);
- mlx_put_image_to_window(m->mlx,m->win,m->img,x ,y);
-//  mlx_hook(m.win,);
- mlx_loop(m->mlx); 
+	n = nb;
+	if (n < 0)
+	{
+		ft_putchar_fd ('-');
+		n = -n;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd ((n / 10));
+		ft_putnbr_fd ((n % 10));
+	}
+	else
+	{
+		ft_putchar_fd ((n + '0'));
+	}
 }

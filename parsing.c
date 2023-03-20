@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/14 16:00:50 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:04:23 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,14 @@ void ft_check_walls(char **map)
           }
                
         j++;   
+    }
+    i = 0;
+    while(map[i])
+    {
+        j =0;
+        if (map[i][j] != '1')
+            write(1,"ERROR FOUND",11);
+        j++;
     }
 }
 int search_car(char *str)

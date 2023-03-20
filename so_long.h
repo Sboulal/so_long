@@ -6,13 +6,17 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/14 15:35:30 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:31:27 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG
 #define SO_LONG
-
+# define W 13
+# define S 1
+# define A 0
+# define D 2
+# define  esc 53
 /*For getnextline*/
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 42
@@ -23,15 +27,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
-// # define W 13
-// # define S 1
-// # define A 0
-// # define D 2
-// # define  right 124
-// # define  left  123
-// # define  up   126
-// # define  down 125
-// # define  esc 53
+
 typedef struct mlx_lib
 {
     void *mlx;
@@ -47,7 +43,10 @@ typedef struct mlx_lib
     int h_img;
     int w_map;
     int h_map;
-
+    int i;
+    int j;
+    int move;
+    int co;
 } t_data;
 
 /*Function For Help*/
@@ -60,6 +59,9 @@ int ft_strchr_1(char *str,int c);
 char *ft_strstr(char *str, char *to_find);
 char	**ft_split(char  *s, char c);
 char	*ft_search(const char *str, int search);
+void	ft_putnbr(int nb);
+void ft_putchar(char c);
+
 /*Function Parsing*/
 int check_ext(char *str, char *search);
 int check_content_map(char *str);
@@ -74,5 +76,14 @@ void check_carct(char **map);
 int search_car(char *str);
 // void check_carct(char **map);
 // void ft_mp_check(char **map);
+
+/*Function for minilibix*/
 void ft_wind();
+
+/*Function for movement*/
+void ft_close(t_data *mw);
+void ft_right(t_data *data);
+void ft_left(t_data *data);
+void ft_down(t_data *data);
+void ft_up(t_data *data);
 #endif
