@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/16 10:04:23 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:22:21 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 /*for extension*/
+
+
+
 int check_ext(char *str, char *search)
 {
     int len_1;
@@ -91,8 +94,7 @@ int Find_COLLECTIBLES(char **map)
     return (1);
 }
  
- 
-void Check_CEP(char **map)
+ void Check_CEP(char **map)
 {
     int a;
 
@@ -112,58 +114,44 @@ void Check_CEP(char **map)
         write(1,"NOT VALID TRY P!!!!!",19);
          exit(a);
     }
+    if (check_carct(map) != 0)
+    {
+        write(1,"INVALID",7);
+        exit(0);
+    }
 } 
 
 void ft_check_walls(char **map)
 {
-    int i;
-    int j;
+   int i;
+   int a;
 
     i = 0;
-    j = 0;
-    while(map[i])
+    a = ft_len_map(map);
+    while (i < ft_strlen(map[0]))
     {
-        if(map[i][0] != '1')
-                write(1,"ERROR FOUND",11);
-                break;
-        i++;
-    }
-    while(map[j])
-    {
-          if (map[0][j] != '1')
-          {
-             write(1,"ERROR FOUND",11);
-                break;
-          }
-               
-        j++;   
+         if(map[0][i] != '1')
+             write(1,"WALL WARNING",12);
+       i++;
     }
     i = 0;
-    while(map[i])
+    while(i < ft_strlen(map[a - 1]))
     {
-        j =0;
-        if (map[i][j] != '1')
-            write(1,"ERROR FOUND",11);
-        j++;
-    }
-}
-int search_car(char *str)
-{
-    int i;
-    char c;
-  
-     str = "10ECP";
-     c = '\0';
-     i = 0;
-    while(str[i])
-    {
-        if(c == str[i])
-             return (1);
+        if(map[a - 1][i] != '1')
+           write(1,"WALL WARNING",12);
         i++;
     }
-    return (0);
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-void check_carct(char **map)
+    i = 0;
+    while( i < a)
+    {
+        if(map[i][ft_strlen(map[i]) - 1] != '1' || map[i][0] != '1')
+                   write(1,"WALL WARNING",12);
+        i++;
+    }
+    
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+int check_carct(char **map)
 {
     int i;
     int j;
@@ -172,12 +160,16 @@ void check_carct(char **map)
     j = 0;
     while (map[i])
     {
-        while( map[i][j] != '\0')
+        j = 0;
+        while(map[i][j])
         {
-             if(search_car(map[i]) != 0)
-                write(1,"INVALID",7);
+            if(map[i][j] != '0' && map[i][j] != '1' &&map[i][j] != 'E' && map[i][j] != 'C' && map[i][j] != 'P')
+            {
+                return (1);
+            }
             j++;
         }
        i++;
     }
+    return (0);
 }

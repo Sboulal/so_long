@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:10:27 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/20 14:24:09 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:59:16 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void ft_right(t_data *data)
       write(1,"GAME FINICH",11);
       mlx_destroy_window(data->mlx,data->win);
       return ;
-      
    }
 }
 

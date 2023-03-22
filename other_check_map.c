@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   other_check_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 10:52:31 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/14 12:53:52 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:17:11 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void  ft_rectangular_map(char  **map)
+void  ft_rectangular_map(char **map)
 {
     int i;
     

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/20 11:31:27 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:55:14 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ typedef struct mlx_lib
     void *mlx;
     void *win;
     char **map_split;
-    char *map;
+    char **map;
     void *wall;
     void *player;
     void *bg;
     void *exit;
+    void *exit_O;
+    void *collectibles;
     void *img;
     int w_img;
     int h_img;
@@ -47,6 +49,8 @@ typedef struct mlx_lib
     int j;
     int move;
     int co;
+    int x;
+    int y;
 } t_data;
 
 /*Function For Help*/
@@ -61,24 +65,26 @@ char	**ft_split(char  *s, char c);
 char	*ft_search(const char *str, int search);
 void	ft_putnbr(int nb);
 void ft_putchar(char c);
+int ft_len_map(char **map);
 
 /*Function Parsing*/
 int check_ext(char *str, char *search);
 int check_content_map(char *str);
 char *map_check_is_valid(char *file_name);
-int Find_EXIT(char **map);
+int Find_PLAYER(char **map);
 int Find_COLLECTIBLES(char **map);
 int Find_PLAYER(char **map);
 void Check_CEP(char **map);
 void ft_rectangular_map(char **map);
 void ft_check_walls(char **map);
-void check_carct(char **map);
+int check_carct(char **map);
 int search_car(char *str);
-// void check_carct(char **map);
+
 // void ft_mp_check(char **map);
 
 /*Function for minilibix*/
-void ft_wind();
+void ft_wind(t_data *data);
+void init_img(t_data *data)
 
 /*Function for movement*/
 void ft_close(t_data *mw);

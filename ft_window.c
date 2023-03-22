@@ -3,32 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_window.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/20 12:50:26 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:57:12 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void ft_wind()
+void ft_wind(t_data *data)
 {
-   t_data *m = NULL;
-
-  int h;
-  int w;
-  int x;
-  int y;
-  
-  h = 0;
-  w = 0;
-  x = 10;
-  y = 10;
- m->mlx= mlx_init();
- m->win = mlx_new_window(m->mlx,x * 100,y * 50,"so_long");
- m->img = mlx_xpm_file_to_image(m->mlx,"Solid_green.svg.xpm",&w,&h);
- mlx_put_image_to_window(m->mlx,m->win,m->img,x ,y);
-//  mlx_hook(m.win,);
- mlx_loop(m->mlx); 
+    data->x = x_for_s(data->map);
+    data->y = y_for_s(data->map);
+	data->mlx = mlx_init();
+    data->win = mlx_new_window(data->mlx,100, 50, "so_long");
+	init_img(data);
+    mlx_hook(data->win,,,);
+    mlx_hook(data->win,,,);
+    mlx_loop(data->mlx);
 }

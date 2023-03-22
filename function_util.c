@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:12 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/09 10:36:20 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/21 17:33:33 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,13 @@ int	ft_strchr_1(char *str,int c)
 		i++;
 	}
 	return (0);
+}
+
+int ft_len_map(char **map)
+{
+	int i;
+	i = 0;
+	while(map[i])
+	   i++;
+	return(i);
 }
