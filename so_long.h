@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/22 14:55:14 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:30:33 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
+
 
 typedef struct mlx_lib
 {
@@ -83,9 +84,15 @@ int search_car(char *str);
 // void ft_mp_check(char **map);
 
 /*Function for minilibix*/
-void ft_wind(t_data *data);
-void init_img(t_data *data)
 
+void init_img(t_data *data);
+int x_for_s(char **str);
+int y_for_s(char **str);
+int get_collectibles(char **map);
+void init(t_data data);
+void ft_wind(t_data data);
+void	image_to_window(t_data data);
+void imp_image2(t_data *data , int j ,int i);
 /*Function for movement*/
 void ft_close(t_data *mw);
 void ft_right(t_data *data);
