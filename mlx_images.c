@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 10:16:07 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/23 16:45:10 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:42:42 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,45 +57,41 @@ void	image_to_window(t_data data)
 	int l;
 	int k;
 	data.j = 0;
-	int i , j = 0;
+	
 	// data.x = 0;
 	// data.y = 0;
 	l = 0;
 	k = 0;
-	while (j < data.y)
+	while (data.j < data.y)
 	{
-		i = 0;
-		while (i < data.x)
+		data.i = 0;
+		while (data.i < data.x)
 		{
-			if (data.map[j][i] == '1')
+			if (data.map[data.j][data.i] == '1')
 			{
-				printf("cccc");
+				
 				// data.wall= mlx_xpm_file_to_image(data.mlx,"imagesxpm/wall1.xpm",&j,&i);
 				mlx_put_image_to_window(data.mlx, data.win,data.wall, k, l);
 			}
-			else if (data.map[j][i] == '0')
+			else if (data.map[data.j][data.i] == '0')
 			{
-				
 				mlx_put_image_to_window(data.mlx, data.win,data.bg, k, l);
 			}
 			// imp_image2(&data,j,i);
-			/*******khalid*****/
-			else if (data.map[j][i] == 'P')
-				mlx_put_image_to_window(data.mlx, data.win,data.player, k, l);
-			else if (data.map[j][i] == 'C')
-				mlx_put_image_to_window(data.mlx, data.win,data.collectibles, k, l);
-			else if (data.map[j][i] == 'E' && data.collectibles != 0)
-				mlx_put_image_to_window(data.mlx, data.win,data.exit, k, l);
-			else if (data.map[j][i] == 'E' && data.co == 0)
-				mlx_put_image_to_window(data.mlx, data.win,data.exit_O, k, l);
-			/*******khalid*****/
 		
-			k += 64;
-			i++;
+			else if (data.map[data.j][data.i] == 'P')
+				mlx_put_image_to_window(data.mlx, data.win,data.player, k, l);
+			else if (data.map[data.j][data.i] == 'C')
+				mlx_put_image_to_window(data.mlx, data.win,data.collectibles, k, l);
+		    else if (data.map[data.j][data.i] == 'E' && data.collectibles != 0)
+		        mlx_put_image_to_window(data.mlx, data.win,data.exit, k, l);
+	        else if (data.map[data.j][data.i] == 'E' && data.collectibles == 0)
+		        mlx_put_image_to_window(data.mlx, data.win,data.exit_O, k, l);
+		    k += 64;
+			data.i++;
 		}
-		k = 0;
+		k = 0;            
 		l += 64;
-		j++;
+		data.j++;
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/22 14:22:21 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:19:08 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,30 @@ char *map_check_is_valid(char *file_name)
 }
 
 /*check  components*/
-int Find_PLAYER(char **map)
+int Find_PLAYER(t_data *data)
 {
     int i;
+    int j;
     int P;
+    
     i = 0;
     P = 0;
-    while(map[i])
+    while(data->map[i])
     {
-        if(ft_strchr_1(map[i],'P') == 1)
+         j = 0;
+        while(data->map[i][j])
         {
-            P++;
-            return (0);
+            if (data->map[i][j] == 'P')
+            {
+                P++;
+                data->i = i;
+                data->j = j;
+            }
+            j++;
         }
-          
        i++;
     }
-  return(P == 1);
+  return(P);
 }
 
 int Find_EXIT(char **map)
@@ -94,27 +101,27 @@ int Find_COLLECTIBLES(char **map)
     return (1);
 }
  
- void Check_CEP(char **map)
+ void Check_CEP(t_data *data)
 {
     int a;
 
     a = 0;
-    if(Find_COLLECTIBLES(map) != 0)
+    if(Find_COLLECTIBLES(data->map) != 0)
     {   
         write(1,"NOT VALID TRY C!!!!!",19);
          exit(a);
     }
-    if(Find_EXIT(map) != 0)
+    if(Find_EXIT(data->map) != 0)
     {
         write(1,"NOT VALID TRY E!!!!!",19);
         exit(a);
     }
-    if(Find_PLAYER(map) != 0)
+    if(Find_PLAYER(data) != 1)
     {
         write(1,"NOT VALID TRY P!!!!!",19);
          exit(a);
     }
-    if (check_carct(map) != 0)
+    if (check_carct(data->map) != 0)
     {
         write(1,"INVALID",7);
         exit(0);
@@ -157,7 +164,6 @@ int check_carct(char **map)
     int j;
     
     i = 0;
-    j = 0;
     while (map[i])
     {
         j = 0;

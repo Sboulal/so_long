@@ -6,7 +6,7 @@
 #    By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 15:06:46 by saboulal          #+#    #+#              #
-#    Updated: 2023/03/23 10:39:15 by saboulal         ###   ########.fr        #
+#    Updated: 2023/03/24 09:22:51 by saboulal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
  
 CFLAGS = -Wall -Wextra -Werror
 	
-OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o ft_window.o initialisation_for_game.o mlx_images.o data_init.o
+OBJS = so_long.o function_util.o parsing.o get_next_line.o get_next_line_util.o other_check_map.o ft_split.o ft_window.o initialisation_for_game.o mlx_images.o data_init.o for_move.o
 RM = rm -f 
  
 all : $(NAME)

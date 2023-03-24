@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:00:53 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/23 16:22:18 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:03:58 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,7 @@
 //     data->h_map = i;
 // }
 
-//  int for_macro(int keycode , char **map)
-//  {
-//       if( keycode == esc)
-//            ft_close();
-//       if(keycode == right)
-//             ft_right();
-//       if(keycode == left)
-//             ft_left();
-//       if(keycode == up)
-//           ft_up();
-//  }
+
 
 int main(int argc,char **argv)
 {
@@ -52,7 +42,7 @@ int main(int argc,char **argv)
         write(1,"MAP NOT HERE",12);
         exit(0);
      }
-    Check_CEP(data.map);
+    Check_CEP(&data);
     ft_rectangular_map(data.map);
     ft_check_walls(data.map);
     ft_wind(data);

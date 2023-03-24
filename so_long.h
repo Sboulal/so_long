@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/23 16:30:33 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:56:44 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,9 @@ int ft_len_map(char **map);
 int check_ext(char *str, char *search);
 int check_content_map(char *str);
 char *map_check_is_valid(char *file_name);
-int Find_PLAYER(char **map);
 int Find_COLLECTIBLES(char **map);
-int Find_PLAYER(char **map);
-void Check_CEP(char **map);
+int Find_PLAYER(t_data *data);
+void Check_CEP(t_data *data);
 void ft_rectangular_map(char **map);
 void ft_check_walls(char **map);
 int check_carct(char **map);
@@ -94,9 +93,10 @@ void ft_wind(t_data data);
 void	image_to_window(t_data data);
 void imp_image2(t_data *data , int j ,int i);
 /*Function for movement*/
-void ft_close(t_data *mw);
+void ft_close(t_data *data);
 void ft_right(t_data *data);
 void ft_left(t_data *data);
 void ft_down(t_data *data);
 void ft_up(t_data *data);
+void	get_position(char **map, char c);
 #endif
