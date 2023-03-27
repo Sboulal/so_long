@@ -6,18 +6,17 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:07:52 by saboulal          #+#    #+#             */
-/*   Updated: 2023/02/26 15:38:19 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:41:10 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 char	*ft_read(int fd, char *str)
 {
-	// size_t	i;
 	ssize_t	r;
 	char	*buf;
 
-	// i = 0;
 	r = 1;
 	while (r > 0 && ft_strchr(str) == 0)
 	{

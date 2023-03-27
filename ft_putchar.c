@@ -6,13 +6,13 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:09:58 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/17 13:10:59 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:37:08 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "so_long.h"
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1,&c,1);
+	write(1, &c, 1);
 }

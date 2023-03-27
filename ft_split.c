@@ -6,12 +6,13 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:06:12 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/01 18:01:59 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:39:20 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
-size_t	ft_strlcpy(char *dest,  char *src, size_t size)
+#include "so_long.h"
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	i;
 	size_t	x;
@@ -43,7 +44,8 @@ static char	*ft_strdup( char	*str)
 	ft_strlcpy(s, str, len + 1);
 	return (s);
 }
-char	*ft_substr(char  *s, unsigned int start, size_t len)
+
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char			*sub;
 	unsigned int	i;
@@ -85,7 +87,7 @@ static int	words(char *str, char c)
 {
 	int		i;
 	int		j;
- 
+
 	i = 0;
 	j = 0;
 	while (str[i])
@@ -132,7 +134,7 @@ static char	**alloc_fill( char *s, int start, int end, char c)
 	return (tab);
 }
 
-char	**ft_split(char  *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**tab;
 	int		start;

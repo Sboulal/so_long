@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:12 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/21 17:33:33 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:40:40 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ char	*ft_search(const char *str, int search)
 	}
 	return (0);
 }
-int	ft_strchr_1(char *str,int c)
+
+int	ft_strchr_1(char *str, int c)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		
 		if (str[i] == (char)c)
 			return (1);
 		i++;
@@ -72,11 +72,12 @@ int	ft_strchr_1(char *str,int c)
 	return (0);
 }
 
-int ft_len_map(char **map)
+int	ft_len_map(char **map)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	while(map[i])
-	   i++;
-	return(i);
+	while (map[i])
+		i++;
+	return (i);
 }

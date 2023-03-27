@@ -6,11 +6,11 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:12:49 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/17 14:29:21 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:37:21 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "so_long.h"
 
 void	ft_putnbr_fd(int nb)
 {

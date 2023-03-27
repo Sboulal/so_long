@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:07:49 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/06 17:36:29 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:41:44 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*ft_strjoin(char *left_str, char *buff)
 	size_t	lenleft;
 	size_t	lsbuff;
 
-    if(left_str == NULL)
-    {
-        left_str = malloc(1);
-        left_str[0] = '\0';
-    }
+	if (left_str == NULL)
+	{
+		left_str = malloc(1);
+		left_str[0] = '\0';
+	}
 	lenleft = ft_strlen(left_str);
 	lsbuff = ft_strlen(buff);
 	str = (char *) malloc(sizeof(char) * ((lenleft + lsbuff) + 1));
