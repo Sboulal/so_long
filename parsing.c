@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/27 14:56:54 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:39:03 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,18 @@ void	check_cep(t_data *data)
 		write(1, "INVALID", 7);
 		exit(1);
 	}
+	// if(palce_x(data->map) != 0)
+	// {
+	// 	write(1, "INVALID", 7);
+	// 	exit(1);
+	// }
 }
 
 void	ft_check_walls(char **map)
-{
+{   
 	int	i;
 	int	a;
-
+	
 	i = 0;
 	a = ft_len_map(map);
 	while (i < ft_strlen(map[0]))

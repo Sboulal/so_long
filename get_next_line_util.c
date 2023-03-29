@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_util.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:07:49 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/27 14:41:44 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/29 09:40:01 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ char	*ft_strjoin(char *left_str, char *buff)
 	size_t	lenleft;
 	size_t	lsbuff;
 
-	if (left_str == NULL)
-	{
-		left_str = malloc(1);
-		left_str[0] = '\0';
-	}
 	lenleft = ft_strlen(left_str);
 	lsbuff = ft_strlen(buff);
 	str = (char *) malloc(sizeof(char) * ((lenleft + lsbuff) + 1));

@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:10:27 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/27 14:35:43 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:40:40 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_right(t_data *data)
 
 void	ft_left(t_data *data)
 {
-	if (data->map[data->i][data->j - 1] == '0')
+	if (data->map[data->i][data->j - 1] == '0' )
 	{
 		data->map[data->i][data->j - 1] = 'P';
 		data->map[data->i][data->j] = '0';

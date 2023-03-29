@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/03/27 15:07:07 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:12:36 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,10 @@ char	*ft_search(const char *str, int search);
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
 int		ft_len_map(char **map);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
+char	*ft_strdup_1( char	*str);
+char	*ft_substr(char *s, unsigned int start, size_t len);
+
 
 /*Function Parsing*/
 int		check_ext(char *str, char *search);
@@ -79,6 +83,11 @@ void	ft_rectangular_map(char **map);
 void	ft_check_walls(char **map);
 int		check_carct(char **map);
 int		search_car(char *str);
+int		palce_x(char **map);
+char 	*ft_copy_map(char **map);
+void	flood_fill_map(char **map,int i,int j);
+void ft_free(char **map);
+
 
 /*Function for minilibix*/
 
@@ -96,5 +105,7 @@ void	ft_right(t_data *data);
 void	ft_left(t_data *data);
 void	ft_down(t_data *data);
 void	ft_up(t_data *data);
+
+/*Function Backtracking*/
 
 #endif
