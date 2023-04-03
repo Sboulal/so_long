@@ -6,11 +6,12 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 10:52:31 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 14:59:41 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:10:45 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 void	ft_rectangular_map(t_data *data)
 {
 	int	i;

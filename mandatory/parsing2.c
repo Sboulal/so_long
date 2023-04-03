@@ -6,14 +6,15 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:48:54 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 13:52:19 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:09:33 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 int	check_ext(char *str, char *search)
-{	int	len_1;
+{
+	int	len_1;
 	int	len_2;
 
 	len_1 = ft_strlen(str);

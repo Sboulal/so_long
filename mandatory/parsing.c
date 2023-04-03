@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:08 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 10:08:51 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:04:10 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	find_collectibles(char **map)
 
 void	check_cep(t_data *data)
 {
-	
 	if (find_exit(data->map) != 0)
 	{
 		write(1, "NOT VALID TRY E!!!!!", 19);
@@ -41,7 +40,6 @@ void	check_cep(t_data *data)
 	}
 	if (find_player(data) != 1)
 	{
-		
 		write(1, "NOT VALID TRY P!!!!!", 19);
 		exit(1);
 	}
@@ -53,10 +51,10 @@ void	check_cep(t_data *data)
 }
 
 void	ft_check_walls(char **map)
-{   
+{
 	int	i;
 	int	a;
-	
+
 	i = 0;
 	a = ft_len_map(map);
 	while (i < ft_strlen(map[0]))

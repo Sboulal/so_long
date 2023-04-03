@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:28:20 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 15:21:07 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:13:54 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	for_macro(int keycode, t_data *data)
 {
 	if (keycode == ESC)
 		ft_close(data);
-	if (keycode ==  17)
+	if (keycode == 17)
 		ft_close(data);
 	if (keycode == D || keycode == 124)
 		ft_right(data);
@@ -31,17 +31,26 @@ int	for_macro(int keycode, t_data *data)
 	return (0);
 }
 
+int	exit_close(void)
+{
+	exit(0);
+}
+
 void	ft_wind(t_data data)
 {
 	data.x = x_for_s(data.map);
 	data.y = y_for_s(data.map);
 	data.co = get_collectibles(data.map);
 	data.mlx = mlx_init();
+	if (!mlx_init())
+		return (NULL);
 	data.win = mlx_new_window(data.mlx, (data.x) * 64,
 			(data.y) * 64, "so_long");
+	if (!mlx_new_window())
+		return (NULL);
 	init_img(&data);
 	image_to_window(data);
 	mlx_hook(data.win, 2, 0, for_macro, &data);
-	mlx_hook(data.win, 17, 0, for_macro, &data);
+	mlx_hook(data.win, 17, 0, exit_close, NULL);
 	mlx_loop(data.mlx);
 }

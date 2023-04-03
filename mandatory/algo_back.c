@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:44:27 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 15:02:26 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:15:53 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /*working in Backtracing .....*/
 
-void ft_free(char **map)
+void	ft_free(char **map)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(map[i])
+	i = 0;
+    while (map[i])
     {
         free(map[i]);
         i++;

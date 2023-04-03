@@ -6,7 +6,7 @@
 /*   By: saboulal <saboulal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:01:15 by saboulal          #+#    #+#             */
-/*   Updated: 2023/04/03 14:58:23 by saboulal         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:07:27 by saboulal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ typedef struct mlx_lib
 	int		co;
 	int		x;
 	int		y;
-	int d;
-	int p;
-	char **copy;
+	int		d;
+	int		p;
+	char	**copy;
 	int		w_e;
 }	t_data;
 
@@ -73,7 +73,6 @@ int		ft_len_map(char **map);
 size_t	ft_strlcpy(char *dest, char *src, size_t size);
 char	*ft_strdup_1( char	*str);
 char	*ft_substr(char *s, unsigned int start, size_t len);
-
 
 /*Function Parsing*/
 int		check_ext(char *str, char *search);
@@ -107,8 +106,8 @@ void	ft_up(t_data *data);
 
 /*Function Backtracking*/
 int		place_exit(t_data *data);
-char 	**ft_copy_map(char **map);
-void	flood_fill_map(t_data *data,int i,int j);
+char	**ft_copy_map(char **map);
+void	flood_fill_map(t_data *data, int i, int j);
 void	ft_free(char **map);
 void	pos_player(t_data *data);
 void	pos_exit(t_data *data);
